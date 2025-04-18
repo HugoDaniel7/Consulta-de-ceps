@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de CEPs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <h1><i class="fas fa-map-marker-alt"></i> Consulta de CEPs</h1>
+            <p class="header-description">Obtenha informações completas de endereços a partir de CEPs</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="cep-section">
+            <h2>Consulte aqui</h2>
+            <textarea id="cepInput" placeholder="Cole aqui os CEPs, um por linha..."></textarea>
+            <div class="button-group">
+                <button onclick="consultarCeps()" class="btn-primary">
+                    <i class="fas fa-search"></i> Consultar Endereços
+                </button>
+                <button onclick="baixarCSV()" class="btn-secondary">
+                    <i class="fas fa-file-download"></i> Baixar CSV
+                </button>
+            </div>
+            <div class="loading" id="loadingIndicator"></div>
+        </section>
+
+        <section class="results-section">
+            <table id="resultado">
+                <thead>
+                    <tr>
+                        <th>CEP</th>
+                        <th>Logradouro</th>
+                        <th>Bairro</th>
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre</h3>
+                <p>Ferramenta para consulta de endereços a partir de CEPs brasileiros.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-envelope"></i> hugodaniell7777@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> (21) 98071-1278</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/dev_hugodaniel?igsh=cnV2NG9xdHhhbWtp"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/hugo-daniel-a678a126a/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Consulta de CEPs. Desenvolvido por WebXS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
