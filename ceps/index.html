@@ -6,39 +6,47 @@
     <title>Consulta de CEPs</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="img/brasil-mapa.png" type="image/x-icon">
+    <!-- Bibliotecas para exportação Excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx-style@0.8.13/xlsx.full.min.js"></script>
+    
 </head>
 <body>
     <header class="main-header">
         <div class="header-content">
-            <h1><i class="fas fa-map-marker-alt"></i> Consulta de CEPs</h1>
-            <p class="header-description">Obtenha informações completas de endereços a partir de CEPs</p>
+            <h1><i class="fas fa-map-marker-alt"></i> Consulta de CEPs - BRASIL</h1>
+            <p class="header-description">Obtenha informações completas de endereços a partir de CEPs — você pode colar múltiplos CEPs para pesquisa em massa, inserindo um por linha.</p>
         </div>
     </header>
 
     <main class="container">
         <section class="cep-section">
-            <h2>Consulte aqui</h2>
+            <h2><i class="fas fa-search-location"></i> Consulte aqui</h2>
             <textarea id="cepInput" placeholder="Cole aqui os CEPs, um por linha..."></textarea>
             <div class="button-group">
                 <button onclick="consultarCeps()" class="btn-primary">
                     <i class="fas fa-search"></i> Consultar Endereços
                 </button>
-                <button onclick="baixarCSV()" class="btn-secondary">
+                <button onclick="baixarCSV()" class="btn-primary">
                     <i class="fas fa-file-download"></i> Baixar CSV
+                </button>
+                <button onclick="baixarExcel()" class="btn-primary">
+                    <i class="fas fa-file-excel"></i> Baixar Excel
                 </button>
             </div>
             <div class="loading" id="loadingIndicator"></div>
         </section>
 
-        <section class="results-section">
+        <section class="results-section" id="resultsSection" style="display: none;">
             <table id="resultado">
                 <thead>
                     <tr>
-                        <th>CEP</th>
-                        <th>Logradouro</th>
-                        <th>Bairro</th>
-                        <th>Cidade</th>
-                        <th>Estado</th>
+                        <th><i class="fas fa-map-pin"></i> CEP</th>
+                        <th><i class="fas fa-road"></i> Logradouro</th>
+                        <th><i class="fas fa-map-marked-alt"></i> Bairro</th>
+                        <th><i class="fas fa-city"></i> Cidade</th>
+                        <th><i class="fas fa-flag"></i> Estado</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -68,7 +76,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Consulta de CEPs. Desenvolvido por WebXS. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Consulta de CEPs. Desenvolvido por Hugo Daniel. Todos os direitos reservados.</p>
         </div>
     </footer>
 

@@ -5,6 +5,7 @@
     --light-color: #f8f9fa;
     --dark-color: #212529;
     --success-color: #4cc9f0;
+    --excel-color: #1d6f42;
     --border-radius: 8px;
     --box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     --transition: all 0.3s ease;
@@ -151,6 +152,10 @@ button {
 
 .btn-secondary {
     background: linear-gradient(to right, #6c757d, #495057);
+}
+
+.btn-excel {
+    background: linear-gradient(to right, var(--excel-color), #217346);
 }
 
 button:hover {
